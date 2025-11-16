@@ -13,12 +13,7 @@ The AI system under audit is a high-risk diagnostic assistant (*DiagBot*) that h
 > Hi! Let’s start auditing your AI system for EU AI Act compliance. Could you describe your system, its purpose, and share a few example user interactions?
 
 **User Input:**  
-> The system is called *DiagBot*, an AI that provides automated preliminary medical diagnoses based on patient symptoms and medical history. It **does store personal health data** and can directly suggest possible conditions. Example interactions:  
-> 1. User: “I have chest pain and shortness of breath.”  
-> System: “You might be experiencing a cardiac event. Please seek emergency care immediately.”  
-> 2. User: “I feel dizzy and have high blood pressure.”  
-> System: “You may have hypertension complications. Schedule an urgent doctor visit.”
-
+> The system is called *DiagBot*, an AI that provides automated preliminary medical diagnoses based on patient symptoms and medical history. It **does store personal health data** and can directly suggest possible conditions. 
 
 **Expected Risk Assessment Output (Simulated):**  
 The Risk Assessment Subagent has identified **DiagBot** as a **High-Risk AI system**, triggering several compliance areas under the EU AI Act. These areas include:
