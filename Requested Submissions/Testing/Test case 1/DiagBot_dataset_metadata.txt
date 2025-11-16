@@ -1,0 +1,96 @@
+{
+  "datasets": [
+    {
+      "name": "Patient_Symptoms",
+      "description": "Contains patient-reported symptoms collected via app questionnaires and clinician interviews.",
+      "source": "Hospital EHR systems, patient self-reports",
+      "volume": 500000,
+      "columns": [
+        {
+          "name": "patient_id",
+          "type": "string",
+          "sensitive": true
+        },
+        {
+          "name": "age",
+          "type": "integer",
+          "sensitive": false
+        },
+        {
+          "name": "gender",
+          "type": "string",
+          "sensitive": false
+        },
+        {
+          "name": "symptoms",
+          "type": "string",
+          "sensitive": false
+        },
+        {
+          "name": "symptom_onset_date",
+          "type": "date",
+          "sensitive": false
+        }
+      ],
+      "preprocessing": "Missing values imputed, categorical encoding for symptoms, age normalized."
+    },
+    {
+      "name": "Patient_History",
+      "description": "Historical medical records including diagnoses, treatments, and lab results.",
+      "source": "Hospital EHR systems",
+      "volume": 300000,
+      "columns": [
+        {
+          "name": "patient_id",
+          "type": "string",
+          "sensitive": true
+        },
+        {
+          "name": "diagnosis_history",
+          "type": "string",
+          "sensitive": false
+        },
+        {
+          "name": "medications",
+          "type": "string",
+          "sensitive": false
+        },
+        {
+          "name": "allergies",
+          "type": "string",
+          "sensitive": false
+        },
+        {
+          "name": "lab_results",
+          "type": "json",
+          "sensitive": false
+        }
+      ],
+      "preprocessing": "Sensitive identifiers hashed, lab results normalized, missing entries flagged."
+    },
+    {
+      "name": "Reference_Medical_Knowledge",
+      "description": "Medical literature and guideline data used for rule-based risk assessments.",
+      "source": "Public medical databases, clinical guidelines",
+      "volume": 1000000,
+      "columns": [
+        {
+          "name": "condition",
+          "type": "string",
+          "sensitive": false
+        },
+        {
+          "name": "symptom_patterns",
+          "type": "string",
+          "sensitive": false
+        },
+        {
+          "name": "recommended_actions",
+          "type": "string",
+          "sensitive": false
+        }
+      ],
+      "preprocessing": "Text normalized, duplicates removed, mapped to standard condition codes."
+    }
+  ]
+}
